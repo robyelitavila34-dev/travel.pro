@@ -1,0 +1,134 @@
+<!Doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>travel.pro | Planificador</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="src/styles/estilos.css" />
+    <meta name="theme-color" content="#111827" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+<div id="register-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="register-title">
+      <div class="modal-content">
+<h2 id="register-title">Comienza tu viaje</h2>
+        <p class="modal-subtitle">
+          Introduce tus datos para acceder a la plataforma.
+        </p>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="reg-name">Nombre completo</label>
+            <input
+              type="text"
+              id="reg-name"
+              required
+              placeholder="Ej. Carlos Pérez"
+            />
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Correo electrónico</label>
+            <input
+              type="email"
+              id="reg-email"
+              required
+              placeholder="carlos@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="reg-country">País de residencia</label>
+            <input
+              type="text"
+              id="reg-country"
+              required
+              placeholder="Colombia"
+            />
+          </div>
+          <button type="submit" class="btn btn-block">
+            Ingresar al sistema
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="nav-logo">✈️ travel.pro</div>
+
+      <div class="nav-right">
+        <div id="welcome-message" class="welcome-text"></div>
+        <div class="nav-actions">
+          <button id="profile-link" class="btn hidden">Mi perfil</button>
+          <button id="logout-btn" class="btn hidden">Salir</button>
+        </div>
+        <button id="theme-toggle" class="btn">🌙 Tema Oscuro</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="search-container">
+        <h1 class="main-title">¿A dónde quieres ir hoy?</h1>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Busca un país en español o inglés (Ej: Corea, Japón, France)..."
+          />
+          <button id="search-btn" class="btn">Explorar</button>
+        </div>
+        <div id="error-message" class="error-box hidden"></div>
+      </section>
+
+      <div id="loader" class="loader-container hidden">
+        <div class="spinner"></div>
+        <p>Consultando bases de datos globales...</p>
+      </div>
+
+      <section id="results-wrapper" class="results-grid hidden">
+        <article class="card card-hero" id="mod-country"></article>
+
+        <article class="card" id="mod-weather"></article>
+
+        <article class="card" id="mod-currency"></article>
+
+        <article class="card card-fullwidth" id="mod-tourism"></article>
+
+        <article class="card" id="favorites">
+          <h2>Destinos favoritos</h2>
+        </article>
+
+        <article class="card" id="favorite-attractions">
+          <h2>Atracciones favoritas</h2>
+        </article>
+      </section>  
+      <section id="dashboard" class="card card-fullwidth"></section>
+      <section id="history" class="card">
+        <h2>historial</h2>
+      </section>
+
+      <section id="profile-page" class="profile-page card card-fullwidth hidden">
+        <div class="profile-content">
+          <h2>Mi perfil</h2>
+          <p><strong>Nombre:</strong> <span id="profile-name"></span></p>
+          <p><strong>Correo:</strong> <span id="profile-email"></span></p>
+          <p><strong>País:</strong> <span id="profile-country"></span></p>
+          <p><strong>Países consultados:</strong> <span id="profile-history-count"></span></p>
+          <p><strong>Favoritos guardados:</strong> <span id="profile-favorites-count"></span></p>
+          <p><strong>Atracciones guardadas:</strong> <span id="profile-attractions-count"></span></p>
+          <button id="profile-back-btn" class="btn btn-block">Volver a la app</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="src/script/strong.js"></script>
+    <script src="src/script/countries.js?v=3"></script>
+    <script src="src/script/weather.js"></script>
+    <script src="src/script/currency.js"></script>
+    <script src="src/script/tourism.js?v=3"></script>
+    <script src="src/script/app.js"></script>
+    <script src="src/script/Favoritos.js"></script>
+    <script src="src/script/Historial.js"></script>
+    <script src="src/script/dashboard.js"></script>
+    <script src="src/script/Atracciones.js"></script>
+
+  </body>
+</html>
